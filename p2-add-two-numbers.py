@@ -22,19 +22,15 @@ def transNumber(ln):
 
 
 def transNode(num):
-    num_list = list(str(num))
-    num_list.reverse()
-    pointer = None
     header = None
-    for num in num_list:
-        if not pointer :
-            pointer = ListNode(int(num))
-            header = pointer
+    for c in str(num):
+        ln = ListNode(int(c))
+        if  header == None :
+            header = ln
         else:
-            pointer.next = ListNode(int(num))
-            pointer = pointer.next
+            ln.next = header
+            header = ln
     return header
-
 
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
