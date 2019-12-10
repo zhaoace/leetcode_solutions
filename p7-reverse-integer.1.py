@@ -20,12 +20,12 @@ class Solution(object):
             return result
 
 
-
-
 if __name__ == "__main__":
     solution = Solution()
-    assert 321 == solution.reverse(123)
-    assert -321 == solution.reverse(-123)
-    assert 21 == solution.reverse(120)
-    assert 0 == solution.reverse(-1563847412)
+    calling_function = getattr(solution,"reverse")
+    assert 321 == calling_function(123)
+    assert -321 == calling_function(-123)
+    assert 21 == calling_function(120)
+    assert 0 == calling_function(-1563847412)
+
     print "PASS!!!"
